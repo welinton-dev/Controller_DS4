@@ -1,28 +1,22 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 android {
-    // Aumentamos para 34 para garantir que o GitHub encontre as ferramentas de 2026
-    compileSdkVersion 34
-    
+    namespace 'com.controller'
+    compileSdk 34
+
     defaultConfig {
         applicationId "com.controller"
-        minSdkVersion 21 // Aumentado para 21 para evitar erros de bibliotecas modernas
-        targetSdkVersion 34
+        minSdk 21
+        targetSdk 34
         versionCode 1
         versionName "1.0"
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-
-    // Compatibilidade de Java para o GitHub Actions
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 }
 
@@ -32,10 +26,6 @@ repositories {
 }
 
 dependencies {
-    // Correção do erro: 'implementation' em vez de 'compile'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    
-    // Bibliotecas básicas para não dar erro de falta de componentes
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
 }

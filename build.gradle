@@ -4,7 +4,6 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        // Atualizei para uma versão um pouco mais recente que funciona melhor no GitHub
         classpath 'com.android.tools.build:gradle:8.2.2'
     }
 }
@@ -13,7 +12,5 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        maven { url "https://jitpack.io" }
-        // Removi os links mortos (bintray e clojars) que causam erro no Gradle novo
     }
 }
