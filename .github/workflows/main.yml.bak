@@ -21,9 +21,8 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Dar permissão de execução ao Gradle
-      run: chmod +x gradlew
+    - name: Configurar o Gradle automaticamente
+      uses: gradle/actions/setup-gradle@v3
 
     - name: Compilar o projeto com Gradle
-      run: ./gradlew build
-      
+      run: gradle build

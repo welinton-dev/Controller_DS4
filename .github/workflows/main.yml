@@ -21,8 +21,10 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Configurar o Gradle automaticamente
+    - name: Configurar o Gradle 8.5
       uses: gradle/actions/setup-gradle@v3
+      with:
+        gradle-version: '8.5' 
 
     - name: Compilar o projeto com Gradle
       run: gradle build
